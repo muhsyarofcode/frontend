@@ -1,17 +1,29 @@
+import React from "react";
+import {createBrowserRouter,RouterProvider} from "react-router-dom";
+import Login from "./components/login";
+import Register from "./components/register";
+import Dashboard from "./components/dashboard";
+
 function App() {
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Login/>
+    },
+    {
+      path: "/register",
+      element: <Register/>
+    },
+    {
+      path: "/dashboard",
+      element: <Dashboard/>
+    }
+  ])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.StrictMode>
+      <RouterProvider router={router} />
+    </React.StrictMode>
   );
 }
 
