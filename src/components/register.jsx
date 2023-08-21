@@ -20,6 +20,7 @@ const Register = () => {
                 confPassword: confPassword
             });
             navigate("/");
+            alert('Registered')
         } catch (error) {
             if(error.response){
                 setMsg(error.response.data.msg)
@@ -32,7 +33,8 @@ const Register = () => {
             <div className="container">
                 <div className="columns is-centered">
                     <div className="column is-4-desktop">
-                        <form className="box" onSubmit={Register} >
+                        <div className="box">
+                        <form onSubmit={Register} >
                             <p className="has-text-center">{msg}</p>
                             <div className="field mt-5">
                                 <label className="label">Name</label>
@@ -66,6 +68,8 @@ const Register = () => {
                                 <button className="button is-success is-fullwidth">Register</button>
                             </div>
                         </form>
+                        <p className="mt-3">already have an account? <a href="/">Sign In</a></p>
+                        </div>
                     </div>
                 </div>
             </div>

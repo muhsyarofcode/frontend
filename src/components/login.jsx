@@ -27,7 +27,8 @@ const Login = () => {
             <div className="container">
                 <div className="columns is-centered">
                     <div className="column is-4-desktop">
-                        <form onSubmit={Auth} className="box">
+                        <div className="box">
+                            <form onSubmit={Auth} >
                         <p className="has-text-center">{msg}</p>
                             <div className="field mt-5">
                                 <label htmlFor="username" className="label">Email or Username</label>
@@ -46,7 +47,11 @@ const Login = () => {
                             <div className="field mt-5">
                                 <button className="button is-success is-fullwidth">Login</button>
                             </div>
-                        </form>
+                            </form>
+                            <a href="/register">
+                                <button className="button is-success is-fullwidth mt-5">Register</button>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
